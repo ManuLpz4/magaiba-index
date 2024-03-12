@@ -6,6 +6,8 @@ import { useGentlenessIndex } from "@magaiba-index/hooks/useGentleIndex";
 import { useMagaibaRadio } from "@magaiba-index/hooks/useMagaibaRadio";
 import { useEffect, useState } from "react";
 
+const MAX_VALUE = 1000;
+
 export default function App() {
   const { isPlaying, toggleMagaibaRadio } = useMagaibaRadio();
   const { gentlenessValue, sentimentValue } = useGentlenessIndex();
@@ -14,12 +16,15 @@ export default function App() {
   useEffect(() => {
     if (isPlaying) {
       setInterval(() => {
-        setDancingValue(gentlenessValue * (1 + Math.random() * 0.05));
+        const multiplier = gentlenessValue < MAX_VALUE ? 1 : -1;
+        setDancingValue(gentlenessValue * (multiplier + Math.random() * 0.05));
       }, 500);
     } else {
       setDancingValue(0);
     }
   }, [isPlaying, gentlenessValue]);
+
+  const value = (dancingValue || gentlenessValue) * MAX_VALUE;
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
@@ -35,11 +40,11 @@ export default function App() {
           height={200}
           currentValueText={`Now: ${sentimentValue}`}
           textColor="white"
-          segments={1_000}
+          segments={MAX_VALUE}
           maxSegmentLabels={0}
           needleColor="white"
-          needleTransitionDuration={1_000}
-          value={(dancingValue || gentlenessValue) * 1_000}
+          needleTransitionDuration={MAX_VALUE}
+          value={Math.min(value, isPlaying ? value : MAX_VALUE)}
           startColor="red"
           endColor="fuchsia"
         />
