@@ -61,6 +61,24 @@ export default function App() {
           Manu Lopez
         </a>
       </p>
+      <p className="text-center">
+        Source code{" "}
+        <a
+          className="bg-gradient-to-r from-red-500 to-fuchsia-500 inline-block text-transparent bg-clip-text"
+          href="https://github.com/ManuLpz4/magaiba-index"
+          target="_blank"
+        >
+          here
+        </a>
+      </p>
+      <br />
+      <p className="text-center">
+        Support Magaiba.com
+        <br />
+        <span className="bg-gradient-to-r from-red-500 to-fuchsia-500 inline-block text-transparent bg-clip-text">
+          FVYZYrzbCo9Y4mosx9VJeUSUaUW1xJdmHbtsP8UZUSZo
+        </span>
+      </p>
     </main>
   );
 }
