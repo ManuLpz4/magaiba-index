@@ -39,7 +39,7 @@ export const useGentlenessIndex = () => {
   useEffect(() => {
     const getGentlenessValue = async () => {
       const response = await fetch(
-        "https://api.dexscreener.co/latest/dex/pairs/solana/5pxvyeqa7iwfuxcypuiqpdjztafnc8x5s3x3tddmptoa"
+        "https://api.dexscreener.com/latest/dex/pairs/solana/5pxvyeqa7iwfuxcypuiqpdjztafnc8x5s3x3tddmptoa"
       );
       const value = await response.json();
       return calculateFearAndGreedIndex(value);
