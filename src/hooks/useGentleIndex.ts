@@ -24,11 +24,11 @@ export const useGentlenessIndex = () => {
   }
 
   const getSentimentByValue = (value: number) => {
-    if (value < 0.1) return "Extreme fear";
-    if (value < 0.2) return "Fear";
+    if (value < 0.1) return "Evil";
+    if (value < 0.2) return "Unkind";
     if (value < 0.3) return "Not that gentle";
     if (value < 0.4) return "Not that good";
-    if (value < 0.5) return "Neutral";
+    if (value < 0.5) return "MAGAIBA Neutral";
     if (value < 0.6) return "Good";
     if (value < 0.7) return "Gentle";
     if (value < 0.8) return "So good";
