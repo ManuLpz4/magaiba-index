@@ -51,7 +51,7 @@ export default function App() {
         </div>
       </section>
       <br />
-      <p>
+      <p className="text-center">
         Crafted with love by{" "}
         <a
           className="bg-gradient-to-r from-red-500 to-fuchsia-500 inline-block text-transparent bg-clip-text"
