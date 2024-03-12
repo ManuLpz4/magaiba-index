@@ -7,7 +7,7 @@ import { useMagaibaRadio } from "@magaiba-index/hooks/useMagaibaRadio";
 import { useEffect, useState } from "react";
 
 export default function App() {
-  const { isPlaying, toggleMagaibaRadio } = useMagaibaRadio();
+  const { isPlaying, toggleMagaibaRadio, increaseVolume, decreaseVolume, volume } = useMagaibaRadio();
   const { gentlenessValue, sentimentValue } = useGentlenessIndex();
   const [dancingValue, setDancingValue] = useState(0);
 
@@ -43,11 +43,19 @@ export default function App() {
           startColor="red"
           endColor="fuchsia"
         />
-        <div
-          className="flex items-center text-center text-3xl"
-          onClick={toggleMagaibaRadio}
-        >
-          {isPlaying ? "⏸︎" : "▶️"}
+        <div className="flex justify-center items-center gap-4">
+          <div
+            className="flex items-center text-center text-3xl"
+            onClick={toggleMagaibaRadio}
+          >
+            {isPlaying ? "⏸︎" : "▶️"}
+          </div>
+          <div className="flex items-center justify-right">
+            <button onClick={decreaseVolume} disabled={volume <= 0}>-</button>
+            {volume === 0 ? "🔈" : volume < 0.5 ? "🔉" : "🔊"}
+
+            <button onClick={increaseVolume} disabled={volume >= 1}>+</button>
+          </div>
         </div>
       </section>
       <br />
