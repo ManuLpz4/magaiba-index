@@ -25,7 +25,7 @@ export default function App() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
-        <section className="flex flex-col gap-10 justify-center items-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:from-inherit  rounded-xl border p-4 bg-zinc-800/30">
+        <section className="flex flex-col gap-10 justify-center items-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:from-inherit  rounded-xl border bg-gray-200 p-4 dark:bg-zinc-800/30">
           <p className="text-center">
             <b className="bg-gradient-to-r from-red-500 to-fuchsia-500 inline-block text-transparent bg-clip-text text-4xl">
               Magaiba
@@ -52,7 +52,7 @@ export default function App() {
             {isPlaying ? "⏸︎" : "▶️"}
           </div>
         </section>
-        <section className="flex flex-col gap-8 border-b col-span-1 xl:col-span-2 border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:from-inherit rounded-xl border bg-gray-200 p-4 dark:bg-zinc-800/30 text-black dark:text-white">
+        <section className="flex flex-col xl:col-span-2 gap-8 border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:from-inherit  rounded-xl border bg-gray-200 p-4 dark:bg-zinc-800/30">
           <div className="flex flex-row gap-2 items-center">
             <span className="text-6xl">🔥</span>
             <div className="flex flex-col">
@@ -66,12 +66,15 @@ export default function App() {
             For every purchase we will burn the earnings amount in MAGAIBA
             tokens.
           </p>
-          <Link
-            className="bg-gradient-to-r from-red-500 to-fuchsia-500 border font-bold border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-            href={"/shop"}
-          >
-            🔥 Buy merch and burn MAGAIBA
-          </Link>
+          <div>
+            <Link
+              className="bg-gradient-to-r from-red-500 to-fuchsia-500 border font-bold border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+              href={"https://shop.magaiba.com"}
+              target="_blank"
+            >
+              🔥 Buy merch and burn MAGAIBA
+            </Link>
+          </div>
         </section>
       </div>
       <br />
