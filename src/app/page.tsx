@@ -23,7 +23,18 @@ export default function App() {
   }, [isPlaying, gentlenessValue]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <main className="grid min-h-screen gap-4 items-center justify-center p-24">
+      <section className="border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:from-inherit  rounded-xl border bg-gray-200 p-4 dark:bg-zinc-800/30">
+        Before investing, read the whitepaper{" "}
+        <Link
+          className="bg-gradient-to-r from-red-500 to-fuchsia-500 inline-block text-transparent bg-clip-text"
+          href="/whitepaper.pdf"
+          target="_blank"
+        >
+          here
+        </Link>
+        .
+      </section>
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
         <section className="flex flex-col gap-10 justify-center items-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:from-inherit  rounded-xl border bg-gray-200 p-4 dark:bg-zinc-800/30">
           <p className="text-center">
